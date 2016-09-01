@@ -1,0 +1,37 @@
+<project name="HeadFirstDesignPatterns" basedir="." default="all">
+	<property name="dir.src" value="src"/>
+	<property name="dir.tests" value="tests"/>
+	<property name="dir.build" value="build"/>
+	<property name="dir.classes" value="classes"/>
+	<property name="dir.classes-tests" value="classes-tests"/>
+	
+	<target name="all" depends="clean,compile,compile-tests, run-tests"/>
+	<target name="clean">
+		<delete dir="${dir.build}"/>
+		<delete dir="${dir.classes}"/>
+	</target>
+	
+	<target name="compile">
+		<mkdir dir="${dir.classes}"/>
+		<javac srcdir="${dir.src}" destdir="${dir.classes}" includeantruntime="true"/>
+	</target>
+	
+	<target name="compile-tests">
+		<mkdir dir="${dir.classes-tests}"/>
+		<javac srcdir="${dir.tests}" destdir="${dir.classes-tests}" includeantruntime="true" classpath="lib/junit-4.12.jar"/>
+	</target>
+	
+	<target name="run-tests" depends="compile-tests">
+		<junit>
+	    	<classpath>
+	    		<pathelement location="bin" />    
+	    		<pathelement location="lib/junit-4.12.jar"/>
+	    	</classpath>    
+	    	<batchtest>
+	    		<fileset dir="${dir.tests}">
+	    		</fileset>
+	  		</batchtest>
+			<formatter type="brief" usefile="false"/>
+		</junit>
+	</target>
+</project>
