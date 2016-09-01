@@ -18,20 +18,22 @@
 	
 	<target name="compile-tests">
 		<mkdir dir="${dir.classes-tests}"/>
-		<javac srcdir="${dir.tests}" destdir="${dir.classes-tests}" includeantruntime="true" classpath="lib/junit-4.12.jar"/>
+		<javac srcdir="${dir.tests}" destdir="${dir.classes-tests}" includeantruntime="true" classpath="lib/junit-4.12.jar,lib/hamcrest-core-1.3.jar"/>
 	</target>
 	
 	<target name="run-tests" depends="compile-tests">
-		<junit>
+		<junit haltonfailure="no" failureproperty="test.failed">
 	    	<classpath>
-	    		<pathelement location="bin" />    
+	    		<pathelement location="bin"/>
 	    		<pathelement location="lib/junit-4.12.jar"/>
+	    		<pathelement location="lib/hamcrest-core-1.3.jar"/>
 	    	</classpath>    
 	    	<batchtest>
 	    		<fileset dir="${dir.tests}">
 	    		</fileset>
 	  		</batchtest>
-			<formatter type="brief" usefile="false"/>
+			<formatter type="plain" usefile="false"/>
 		</junit>
+		<fail message="A test failed." if="test.failed"/>
 	</target>
 </project>
