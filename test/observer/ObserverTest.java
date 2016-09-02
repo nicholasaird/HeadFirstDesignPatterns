@@ -37,4 +37,14 @@ public class ObserverTest {
 		assertEquals("Avg/Min/Max temperature = 1.0F/1.0F/1.0F", statisticsDisplay.displayString());
 	}
 
+	@Test
+	public void testAllObserversReceiveData2() {
+		weatherData.setMeasurements(1, 2, 3);
+		weatherData.setMeasurements(4, 5, 6);
+		
+		assertEquals("CurrentConditions: 4.0F degrees and 5.0% humidity", currentConditionsDisplay.displayString());
+		assertEquals("Improving weather!", forecastDisplay.displayString());
+		assertEquals("Avg/Min/Max temperature = 2.5F/1.0F/4.0F", statisticsDisplay.displayString());
+	}
+
 }
