@@ -4,7 +4,7 @@ public class StatisticsDisplay implements DisplayElement, Observer {
 	private float avgTemperature;
 	private float minTemperature;
 	private float maxTemperature;
-	private float numReadings;
+	private int numReadings = 0;
 	
 	public StatisticsDisplay(Subject weatherData) {
 		weatherData.registerObserver(this);
