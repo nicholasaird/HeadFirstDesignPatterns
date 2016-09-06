@@ -1,10 +1,8 @@
 language: java
+jdk: oraclejdk8
 
-script:
-    - ant compile
-    - ant run-test
+install: ./gradlew assemble
+script: ./gradlew check
 
-jdk:
-    - oraclejdk8
-
-os: windows
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
