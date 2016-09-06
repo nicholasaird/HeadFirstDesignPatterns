@@ -25,20 +25,20 @@ public class ForecastDisplayTest {
     @Test
     public void testNoWeatherUpdate() {
         assertEquals("No change in weather",
-                forecastDisplay.displayString());
+                forecastDisplay.getDisplay());
     }
 
     @Test
     public void testFirstWeatherUpdate() {
         weatherData.setMeasurements(1, 2, 3);
-        assertEquals("No change in weather", forecastDisplay.displayString());
+        assertEquals("No change in weather", forecastDisplay.getDisplay());
     }
 
     @Test
     public void testImprovingWeather() {
         weatherData.setMeasurements(0, 0, 0);
         weatherData.setMeasurements(0, 0, 1);
-        assertEquals("Improving weather!", forecastDisplay.displayString());
+        assertEquals("Improving weather!", forecastDisplay.getDisplay());
     }
 
     @Test
@@ -46,14 +46,14 @@ public class ForecastDisplayTest {
         weatherData.setMeasurements(0, 0, 0);
         weatherData.setMeasurements(0, 0, -1);
         weatherData.setMeasurements(0, 0, 0);
-        assertEquals("Improving weather!", forecastDisplay.displayString());
+        assertEquals("Improving weather!", forecastDisplay.getDisplay());
     }
 
     @Test
     public void testWorseningWeather() {
         weatherData.setMeasurements(0, 0, 0);
         weatherData.setMeasurements(0, 0, -1);
-        assertEquals("Worsening weather!", forecastDisplay.displayString());
+        assertEquals("Worsening weather!", forecastDisplay.getDisplay());
     }
 
     @Test
@@ -61,6 +61,6 @@ public class ForecastDisplayTest {
         weatherData.setMeasurements(0, 0, 0);
         weatherData.setMeasurements(0, 0, 1);
         weatherData.setMeasurements(0, 0, 0);
-        assertEquals("Worsening weather!", forecastDisplay.displayString());
+        assertEquals("Worsening weather!", forecastDisplay.getDisplay());
     }
 }

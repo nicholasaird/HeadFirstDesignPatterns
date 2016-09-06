@@ -6,9 +6,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 public class StatisticsDisplayTest {
-    WeatherData weatherData;
-    StatisticsDisplay statisticsDisplay;
+    private WeatherData weatherData;
+    private StatisticsDisplay statisticsDisplay;
 
     @Before
     public void setUp() {
@@ -24,19 +27,19 @@ public class StatisticsDisplayTest {
 
     @Test
     public void testNoWeatherUpdate() {
-        assertEquals("Avg/Min/Max temperature = 0.0F/0.0F/0.0F", statisticsDisplay.displayString());
+        assertEquals("Avg/Min/Max temperature = 0.0F/0.0F/0.0F", statisticsDisplay.getDisplay());
     }
 
     @Test
     public void testFirstWeatherUpdate() {
         weatherData.setMeasurements(1, 0, 0);
-        assertEquals("Avg/Min/Max temperature = 1.0F/1.0F/1.0F", statisticsDisplay.displayString());
+        assertEquals("Avg/Min/Max temperature = 1.0F/1.0F/1.0F", statisticsDisplay.getDisplay());
     }
 
     @Test
     public void testSecondWeatherUpdate() {
         weatherData.setMeasurements(1, 0, 0);
         weatherData.setMeasurements(3, 0, 0);
-        assertEquals("Avg/Min/Max temperature = 2.0F/1.0F/3.0F", statisticsDisplay.displayString());
+        assertEquals("Avg/Min/Max temperature = 2.0F/1.0F/3.0F", statisticsDisplay.getDisplay());
     }
 }

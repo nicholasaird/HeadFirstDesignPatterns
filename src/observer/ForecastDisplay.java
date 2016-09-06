@@ -23,12 +23,7 @@ public class ForecastDisplay implements DisplayElement, Observer {
     }
 
     @Override
-    public void display() {
-        System.out.println(displayString());
-    }
-
-    @Override
-    public String displayString() {
+    public String getDisplay() {
         String message;
 
         if (pressureDelta > 0) {
