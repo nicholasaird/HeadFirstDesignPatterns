@@ -2,8 +2,6 @@
 /build/
 .gradle/
 
-*.jar
-
 # Eclipse
 .settings/
 
