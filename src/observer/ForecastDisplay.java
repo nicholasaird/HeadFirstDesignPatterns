@@ -11,10 +11,10 @@ public class ForecastDisplay implements DisplayElement, Observer {
 
     @Override
     public void update(float temp, float humidity, float pressure) {
-        if(validValues){
+        if (validValues) {
             pressureDelta = pressure - lastPressure;
         }
-        else{
+        else {
             pressureDelta = 0;
         }
 
@@ -31,13 +31,13 @@ public class ForecastDisplay implements DisplayElement, Observer {
     public String displayString() {
         String message;
 
-        if(pressureDelta > 0){
+        if (pressureDelta > 0) {
             message = "Improving weather!";
         }
-        else if(pressureDelta < 0){
+        else if (pressureDelta < 0) {
             message = "Worsening weather!";
         }
-        else{
+        else {
             message = "No change in weather";
         }
 

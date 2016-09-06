@@ -11,13 +11,13 @@ public class StatisticsDisplayTest {
     StatisticsDisplay statisticsDisplay;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         weatherData = new WeatherData();
         statisticsDisplay = new StatisticsDisplay(weatherData);
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         weatherData = null;
         statisticsDisplay = null;
     }

@@ -12,12 +12,12 @@ public class StatisticsDisplay implements DisplayElement, Observer {
 
     @Override
     public void update(float temp, float humidity, float pressure) {
-        if(numReadings > 0){
+        if (numReadings > 0) {
             minTemperature = Math.min(minTemperature, temp);
             maxTemperature = Math.max(minTemperature, temp);
             avgTemperature = (avgTemperature * numReadings + temp) / (numReadings + 1);
         }
-        else{
+        else {
             avgTemperature = temp;
             minTemperature = temp;
             maxTemperature = temp;
@@ -33,6 +33,7 @@ public class StatisticsDisplay implements DisplayElement, Observer {
 
     @Override
     public String displayString() {
-        return String.format("Avg/Min/Max temperature = %.1fF/%.1fF/%.1fF", avgTemperature, minTemperature, maxTemperature);
+        return String.format("Avg/Min/Max temperature = %.1fF/%.1fF/%.1fF",
+                avgTemperature, minTemperature, maxTemperature);
     }
 }

@@ -11,20 +11,21 @@ public class ForecastDisplayTest {
     ForecastDisplay forecastDisplay;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         weatherData = new WeatherData();
         forecastDisplay = new ForecastDisplay(weatherData);
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         weatherData = null;
         forecastDisplay = null;
     }
 
     @Test
     public void testNoWeatherUpdate() {
-        assertEquals("No change in weather", forecastDisplay.displayString());
+        assertEquals("No change in weather",
+                forecastDisplay.displayString());
     }
 
     @Test

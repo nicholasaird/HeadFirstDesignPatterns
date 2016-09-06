@@ -13,7 +13,7 @@ public class ObserverTest {
     StatisticsDisplay statisticsDisplay;
 
     @Before
-    public void setup(){
+    public void setup() {
         weatherData = new WeatherData();
         currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
         forecastDisplay = new ForecastDisplay(weatherData);
@@ -21,7 +21,7 @@ public class ObserverTest {
     }
 
     @After
-    public void teardown(){
+    public void teardown() {
         weatherData = null;
         currentConditionsDisplay = null;
         forecastDisplay = null;
@@ -32,9 +32,12 @@ public class ObserverTest {
     public void testAllObserversReceiveData1() {
         weatherData.setMeasurements(1, 2, 3);
 
-        assertEquals("CurrentConditions: 1.0F degrees and 2.0% humidity", currentConditionsDisplay.displayString());
-        assertEquals("No change in weather", forecastDisplay.displayString());
-        assertEquals("Avg/Min/Max temperature = 1.0F/1.0F/1.0F", statisticsDisplay.displayString());
+        assertEquals("CurrentConditions: 1.0F degrees and 2.0% humidity",
+                currentConditionsDisplay.displayString());
+        assertEquals("No change in weather",
+                forecastDisplay.displayString());
+        assertEquals("Avg/Min/Max temperature = 1.0F/1.0F/1.0F",
+                statisticsDisplay.displayString());
     }
 
     @Test
@@ -42,8 +45,11 @@ public class ObserverTest {
         weatherData.setMeasurements(1, 2, 3);
         weatherData.setMeasurements(4, 5, 6);
 
-        assertEquals("CurrentConditions: 4.0F degrees and 5.0% humidity", currentConditionsDisplay.displayString());
-        assertEquals("Improving weather!", forecastDisplay.displayString());
-        assertEquals("Avg/Min/Max temperature = 2.5F/1.0F/4.0F", statisticsDisplay.displayString());
+        assertEquals("CurrentConditions: 4.0F degrees and 5.0% humidity",
+                currentConditionsDisplay.displayString());
+        assertEquals("Improving weather!",
+                forecastDisplay.displayString());
+        assertEquals("Avg/Min/Max temperature = 2.5F/1.0F/4.0F",
+                statisticsDisplay.displayString());
     }
 }
