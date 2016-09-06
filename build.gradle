@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 repositories {
     mavenCentral()
@@ -28,5 +29,11 @@ test {
     testLogging {
         showExceptions = true
         showCauses = true
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
     }
 }
