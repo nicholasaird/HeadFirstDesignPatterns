@@ -37,3 +37,5 @@ jacocoTestReport {
         xml.enabled = true
     }
 }
+
+check.dependsOn jacocoTestReport
