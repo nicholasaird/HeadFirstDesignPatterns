@@ -6,9 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 public class StatisticsDisplayTest {
     private WeatherData weatherData;
     private StatisticsDisplay statisticsDisplay;
