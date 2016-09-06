@@ -1,5 +1,8 @@
-apply plugin: 'java'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
 apply plugin: 'jacoco'
+apply plugin: 'java'
+apply plugin: 'pmd'
 
 repositories {
     mavenCentral()
@@ -36,6 +39,10 @@ jacocoTestReport {
     reports {
         xml.enabled = true
     }
+}
+
+checkstyle {
+    toolVersion = "7+"
 }
 
 check.dependsOn jacocoTestReport

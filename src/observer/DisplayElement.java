@@ -1,6 +1,6 @@
 package observer;
 
 public interface DisplayElement {
-	public void display();
-	public String displayString();
+    public void display();
+    public String displayString();
 }
