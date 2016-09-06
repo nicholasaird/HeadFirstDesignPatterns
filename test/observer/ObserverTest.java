@@ -52,4 +52,14 @@ public class ObserverTest {
         assertEquals("Avg/Min/Max temperature = 2.5F/1.0F/4.0F",
                 statisticsDisplay.getDisplay());
     }
+
+    @Test
+    public void testRemoveObserver() {
+        weatherData.setMeasurements(1, 2, 3);
+        weatherData.removeObserver(forecastDisplay);
+
+        weatherData.setMeasurements(2, 3, 4);
+        assertEquals("No change in weather",
+                forecastDisplay.getDisplay());
+    }
 }
