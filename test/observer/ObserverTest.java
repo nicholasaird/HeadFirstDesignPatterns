@@ -46,5 +46,4 @@ public class ObserverTest {
 		assertEquals("Improving weather!", forecastDisplay.displayString());
 		assertEquals("Avg/Min/Max temperature = 2.5F/1.0F/4.0F", statisticsDisplay.displayString());
 	}
-
 }
