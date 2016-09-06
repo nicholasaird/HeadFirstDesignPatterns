@@ -8,3 +8,6 @@
 .project
 
 *.jar
+
+# IntelliJ
+.idea/workspace.xml
