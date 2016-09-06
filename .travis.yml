@@ -4,5 +4,7 @@ jdk: oraclejdk8
 install: ./gradlew assemble
 script: ./gradlew check
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+test:
+    post:
+        - ./gradlew jacocoTestReport
+        - bash <(curl -s https://codecov.io/bash)
