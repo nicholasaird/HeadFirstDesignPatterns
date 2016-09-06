@@ -1,8 +1,8 @@
 <project name="HeadFirstDesignPatterns" basedir="." default="all">
 	<property name="dir.src" value="src"/>
 	<property name="dir.src.test" value="test"/>
-	<property name="dir.build" value="build"/>
-	<property name="dir.build.test" value="build-test"/>
+	<property name="dir.build" value="build/main"/>
+	<property name="dir.build.test" value="build/test"/>
 
 	<path id="classpath.test">
 		<pathelement location="lib/junit-4.12.jar"/>
