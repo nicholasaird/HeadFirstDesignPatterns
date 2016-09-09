@@ -47,4 +47,11 @@ checkstyle {
     toolVersion = "7+"
 }
 
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+
 check.dependsOn jacocoTestReport

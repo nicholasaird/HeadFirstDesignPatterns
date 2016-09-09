@@ -33,11 +33,11 @@ public class ObserverTest {
         weatherData.setMeasurements(1, 2, 3);
 
         assertEquals("CurrentConditions: 1.0F degrees and 2.0% humidity",
-                currentConditionsDisplay.getDisplay());
+                currentConditionsDisplay.displayMessage());
         assertEquals("No change in weather",
-                forecastDisplay.getDisplay());
+                forecastDisplay.displayMessage());
         assertEquals("Avg/Min/Max temperature = 1.0F/1.0F/1.0F",
-                statisticsDisplay.getDisplay());
+                statisticsDisplay.displayMessage());
     }
 
     @Test
@@ -46,11 +46,11 @@ public class ObserverTest {
         weatherData.setMeasurements(4, 5, 6);
 
         assertEquals("CurrentConditions: 4.0F degrees and 5.0% humidity",
-                currentConditionsDisplay.getDisplay());
+                currentConditionsDisplay.displayMessage());
         assertEquals("Improving weather!",
-                forecastDisplay.getDisplay());
+                forecastDisplay.displayMessage());
         assertEquals("Avg/Min/Max temperature = 2.5F/1.0F/4.0F",
-                statisticsDisplay.getDisplay());
+                statisticsDisplay.displayMessage());
     }
 
     @Test
@@ -60,6 +60,6 @@ public class ObserverTest {
 
         weatherData.setMeasurements(2, 3, 4);
         assertEquals("No change in weather",
-                forecastDisplay.getDisplay());
+                forecastDisplay.displayMessage());
     }
 }

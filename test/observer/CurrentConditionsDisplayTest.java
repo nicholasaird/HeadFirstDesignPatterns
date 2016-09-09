@@ -25,14 +25,14 @@ public class CurrentConditionsDisplayTest {
     @Test
     public void testNoWeatherUpdate() {
         assertEquals("CurrentConditions: 0.0F degrees and 0.0% humidity",
-                currentConditionsDisplay.getDisplay());
+                currentConditionsDisplay.displayMessage());
     }
 
     @Test
     public void testFirstWeatherUpdate() {
         weatherData.setMeasurements(1, 2, 3);
         assertEquals("CurrentConditions: 1.0F degrees and 2.0% humidity",
-                currentConditionsDisplay.getDisplay());
+                currentConditionsDisplay.displayMessage());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class CurrentConditionsDisplayTest {
         weatherData.setMeasurements(1, 2, 3);
         weatherData.setMeasurements(4, 5, 6);
         assertEquals("CurrentConditions: 4.0F degrees and 5.0% humidity",
-                currentConditionsDisplay.getDisplay());
+                currentConditionsDisplay.displayMessage());
     }
 }
 

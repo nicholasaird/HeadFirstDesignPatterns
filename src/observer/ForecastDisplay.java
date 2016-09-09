@@ -23,7 +23,7 @@ public class ForecastDisplay implements DisplayElement, Observer {
     }
 
     @Override
-    public String getDisplay() {
+    public String displayMessage() {
         String message;
 
         if (pressureDelta > 0) {

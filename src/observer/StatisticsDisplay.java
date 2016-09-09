@@ -27,7 +27,7 @@ public class StatisticsDisplay implements DisplayElement, Observer {
     }
 
     @Override
-    public String getDisplay() {
+    public String displayMessage() {
         return String.format("Avg/Min/Max temperature = %.1fF/%.1fF/%.1fF",
                 avgTemperature, minTemperature, maxTemperature);
     }
