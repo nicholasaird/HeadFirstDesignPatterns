@@ -1,8 +1,8 @@
 package strategy;
 
 public abstract class Duck {
-    protected FlyBehavior flyBehavior = new DefaultFlyBehavior();
-    protected QuackBehavior quackBehavior = new DefaultQuackBehavior();
+    protected FlyBehavior flyBehavior = new FlyWithWings();
+    protected QuackBehavior quackBehavior = new Quack();
 
     public Duck() {
         //
