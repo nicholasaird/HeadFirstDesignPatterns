@@ -26,7 +26,7 @@ public class MallardDuckTest {
 
     @Test
     public void testQuackMessage() {
-        assertEquals("Quack! (Mallard)", mallardDuck.quackMessage());
+        assertEquals("Quack!", mallardDuck.quackMessage());
     }
 
     @Test
@@ -36,6 +36,6 @@ public class MallardDuckTest {
 
     @Test
     public void testFlyMessage() {
-        assertEquals("The Mallard flies away", mallardDuck.flyMessage());
+        assertEquals("It flies away!", mallardDuck.flyMessage());
     }
 }
