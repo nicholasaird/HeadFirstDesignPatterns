@@ -24,8 +24,7 @@ public class ForecastDisplayTest {
 
     @Test
     public void testNoWeatherUpdate() {
-        assertEquals("No change in weather",
-                forecastDisplay.displayMessage());
+        assertEquals("No change in weather", forecastDisplay.displayMessage());
     }
 
     @Test

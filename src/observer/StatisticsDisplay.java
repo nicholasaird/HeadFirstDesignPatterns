@@ -15,9 +15,9 @@ public class StatisticsDisplay implements DisplayElement, Observer {
         if (numReadings > 0) {
             minTemperature = Math.min(minTemperature, temp);
             maxTemperature = Math.max(minTemperature, temp);
-            avgTemperature = (avgTemperature * numReadings + temp) / (numReadings + 1);
-        }
-        else {
+            avgTemperature = (avgTemperature * numReadings + temp)
+                    / (numReadings + 1);
+        } else {
             avgTemperature = temp;
             minTemperature = temp;
             maxTemperature = temp;

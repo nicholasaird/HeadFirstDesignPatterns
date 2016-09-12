@@ -31,7 +31,8 @@ public class MallardDuckTest {
 
     @Test
     public void testSwimMessage() {
-        assertEquals("All ducks float, even decoys!", mallardDuck.swimMessage());
+        assertEquals("All ducks float, even decoys!",
+                mallardDuck.swimMessage());
     }
 
     @Test

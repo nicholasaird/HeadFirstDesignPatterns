@@ -43,4 +43,3 @@ public class CurrentConditionsDisplayTest {
                 currentConditionsDisplay.displayMessage());
     }
 }
-
