@@ -43,6 +43,8 @@ jacocoTestReport {
     }
 }
 
+check.dependsOn jacocoTestReport
+
 checkstyle {
     toolVersion = "7+"
 }
@@ -53,5 +55,3 @@ tasks.withType(FindBugs) {
         html.enabled = true
     }
 }
-
-check.dependsOn jacocoTestReport
