@@ -9,7 +9,7 @@ I'm not following the book 100%, so some classes might be different or omitted c
 
 ## Building
 
-There is no main(), but you can run the checks and test by typing the following
+There is no main(), but you can run the checks and tests by typing the following
 at a terminal:
 
 ```shell
