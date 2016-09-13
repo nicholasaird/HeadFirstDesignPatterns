@@ -1,5 +1,20 @@
 package decorator;
 
 public abstract class CondimentDecorator extends Beverage {
-    public abstract String getDescription();
+    protected Beverage beverage;
+
+    public CondimentDecorator(Beverage beverage) {
+        this.beverage = beverage;
+        description = "Unknown condiment";
+    }
+
+    @Override
+    public String getDescription() {
+        return beverage.getDescription() + ", " + description;
+    }
+
+    @Override
+    public Cents cost() {
+        return cost.add(beverage.cost());
+    }
 }

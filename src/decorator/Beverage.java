@@ -2,10 +2,13 @@ package decorator;
 
 public abstract class Beverage {
     protected String description = "Unknown beverage";
+    protected Cents cost;
 
     public String getDescription() {
         return description;
     }
 
-    public abstract double cost();
+    public Cents cost() {
+        return cost;
+    }
 }
