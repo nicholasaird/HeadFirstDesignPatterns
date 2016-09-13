@@ -30,4 +30,19 @@ public class CentsTest {
     public void testAddCents() {
         assertEquals(new Cents(2), new Cents(1).add(new Cents(1)));
     }
+
+    @Test
+    public void testSameHashes() {
+        assertEquals(new Cents(100).hashCode(), new Cents(100).hashCode());
+    }
+
+    @Test
+    public void testNotEqualToNull() {
+        assertNotEquals(new Cents(0), null);
+    }
+
+    @Test
+    public void testNotEqualToDifferentObject() {
+        assertNotEquals(new Cents(0), new Object());
+    }
 }

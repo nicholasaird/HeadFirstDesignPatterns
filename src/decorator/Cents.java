@@ -9,6 +9,10 @@ public class Cents {
 
     @Override
     public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+
         if (other instanceof Cents) {
             Cents money = (Cents) other;
             return cents == money.cents;
@@ -17,11 +21,9 @@ public class Cents {
         return false;
     }
 
-    // This class isn't made to use a hashcode
     @Override
     public int hashCode() {
-        assert false : "hashCode not designed";
-        return 42; // Any arbitrary constant will do
+        return (int) cents;
     }
 
     public Cents add(Cents money) {
