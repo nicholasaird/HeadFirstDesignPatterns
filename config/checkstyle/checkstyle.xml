@@ -143,7 +143,6 @@
         <!--<module name="HiddenField"/>-->
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
-        <module name="MagicNumber"/>
         <module name="MissingSwitchDefault"/>
         <module name="SimplifyBooleanExpression"/>
         <module name="SimplifyBooleanReturn"/>
@@ -162,9 +161,5 @@
         <!--<module name="FinalParameters"/>-->
         <module name="TodoComment"/>
         <module name="UpperEll"/>
-    </module>
-
-    <module name="SuppressionFilter">
-        <property name="file" value="./config/checkstyle/checkstyle-suppressions.xml"/>
     </module>
 </module>
