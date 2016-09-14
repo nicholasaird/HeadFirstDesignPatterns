@@ -1,7 +1,7 @@
-package decorator;
+package helper;
 
+import static helper.TestHelper.assertNotEquals;
 import static org.junit.Assert.assertEquals;
-import static test.TestHelper.assertNotEquals;
 
 import org.junit.Test;
 

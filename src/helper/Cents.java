@@ -1,4 +1,4 @@
-package decorator;
+package helper;
 
 public class Cents {
     private long cents;

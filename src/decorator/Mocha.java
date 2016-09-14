@@ -1,5 +1,7 @@
 package decorator;
 
+import helper.Cents;
+
 public class Mocha extends CondimentDecorator {
     public Mocha(Beverage beverage) {
         super(beverage);

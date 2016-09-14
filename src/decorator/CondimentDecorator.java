@@ -1,5 +1,7 @@
 package decorator;
 
+import helper.Cents;
+
 public abstract class CondimentDecorator extends Beverage {
     protected Beverage beverage;
 
