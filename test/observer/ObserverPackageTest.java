@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ObserverTest {
+public class ObserverPackageTest {
     WeatherData weatherData;
     CurrentConditionsDisplay currentConditionsDisplay;
     ForecastDisplay forecastDisplay;

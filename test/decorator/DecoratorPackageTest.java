@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import helper.Cents;
 
-public class DecoratorTest {
+public class DecoratorPackageTest {
     @Test
     public void testPriceOfHouseBlend() {
         Beverage beverage = new HouseBlend();
