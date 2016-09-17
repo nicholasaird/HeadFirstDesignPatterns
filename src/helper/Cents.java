@@ -14,11 +14,14 @@ public class Cents {
         }
 
         if (other instanceof Cents) {
-            Cents money = (Cents) other;
-            return cents == money.cents;
+            return equals((Cents) other);
         }
 
         return false;
+    }
+
+    private boolean equals(Cents other) {
+        return cents == other.cents;
     }
 
     @Override
