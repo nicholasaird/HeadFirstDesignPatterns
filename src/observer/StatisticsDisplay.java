@@ -11,17 +11,31 @@ public class StatisticsDisplay implements DisplayElement, Observer {
     }
 
     @Override
-    public void update(float temp, float humidity, float pressure) {
+    public void update(float temperature, float humidity, float pressure) {
+        setTemperatures(temperature);
+    }
+
+    private void setTemperatures(float temperature) {
         if (numReadings > 0) {
-            minTemperature = Math.min(minTemperature, temp);
-            maxTemperature = Math.max(minTemperature, temp);
-            avgTemperature = (avgTemperature * numReadings + temp)
-                    / (numReadings + 1);
+            setContinuingTemperatures(temperature);
         } else {
-            avgTemperature = temp;
-            minTemperature = temp;
-            maxTemperature = temp;
+            setInitialTemperatures(temperature);
         }
+    }
+
+    private void setContinuingTemperatures(float temperature) {
+        minTemperature = Math.min(minTemperature, temperature);
+        maxTemperature = Math.max(minTemperature, temperature);
+        avgTemperature = (avgTemperature * numReadings + temperature)
+                / (numReadings + 1);
+
+        numReadings++;
+    }
+
+    private void setInitialTemperatures(float temperature) {
+        avgTemperature = temperature;
+        minTemperature = temperature;
+        maxTemperature = temperature;
 
         numReadings++;
     }
