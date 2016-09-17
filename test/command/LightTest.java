@@ -33,7 +33,7 @@ public class LightTest {
     }
 
     @Test
-    public void testOnTwice() {
+    public void testOnTwiceShouldStayOn() {
         light.on();
         light.on();
 
@@ -41,7 +41,7 @@ public class LightTest {
     }
 
     @Test
-    public void testOffTwice() {
+    public void testOffTwiceShouldStayOff() {
         light.off();
         light.off();
 
