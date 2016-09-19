@@ -9,85 +9,101 @@ import org.junit.Test;
 
 public class RemoteControlTest {
     private RemoteControl remoteControl;
+    private Command commandAOn;
+    private Command commandAOff;
+    private Command commandBOn;
+    private Command commandBOff;
 
     @Before
     public void setUp() {
         remoteControl = new RemoteControl();
+
+        commandAOn = mock(Command.class);
+        commandAOff = mock(Command.class);
+        commandBOn = mock(Command.class);
+        commandBOff = mock(Command.class);
     }
 
     @Test
-    public void testOneCommandWithoutExecution() {
-        Command command1On = mock(Command.class);
-        Command command1Off = mock(Command.class);
+    public void testSettingFirstCommandShouldNotExecuteIt() {
+        givenFirstCommandSetToA();
 
-        remoteControl.setCommand(0, command1On, command1Off);
-
-        verify(command1On, times(0)).execute();
-        verify(command1Off, times(0)).execute();
+        verify(commandAOn, times(0)).execute();
+        verify(commandAOff, times(0)).execute();
     }
 
     @Test
-    public void testOnCommandPushedOn() {
-        Command command1On = mock(Command.class);
-        Command command1Off = mock(Command.class);
+    public void testSettingSecondCommandsShouldNotExecuteIt() {
+        givenSecondCommandSetToB();
 
-        remoteControl.setCommand(0, command1On, command1Off);
+        verify(commandBOn, times(0)).execute();
+        verify(commandBOff, times(0)).execute();
+    }
+
+    @Test
+    public void testPushingOnShouldOnlyExecuteTheOnCommand() {
+        givenFirstCommandSetToA();
+
+        whenPushFirstCommandOn();
+
+        verify(commandAOn).execute();
+        verify(commandAOff, times(0)).execute();
+    }
+
+    @Test
+    public void testPushingOffShouldOnlyExecuteTheOffCommand() {
+        givenFirstCommandSetToA();
+
+        whenPushFirstCommandOff();
+
+        verify(commandAOn, times(0)).execute();
+        verify(commandAOff).execute();
+    }
+
+    @Test
+    public void testPushingOnAndOffShouldExecuteOnAndOffCommands() {
+        givenFirstCommandSetToA();
+
+        whenPushFirstCommandOn();
+        whenPushFirstCommandOff();
+
+        verify(commandAOn).execute();
+        verify(commandAOff).execute();
+    }
+
+    @Test
+    public void testPressingOnButtonsWithoutCommandShouldNotThrow() {
+        whenPushFirstCommandOn();
+        whenPushSecondCommandOn();
+    }
+
+    @Test
+    public void testPressingOffButtonsWithoutCommandShouldNotThrow() {
+        whenPushFirstCommandOff();
+        whenPushSecondCommandOff();
+    }
+
+    private void givenFirstCommandSetToA() {
+        remoteControl.setCommand(0, commandAOn, commandAOff);
+    }
+
+    private void givenSecondCommandSetToB() {
+        remoteControl.setCommand(1, commandBOn, commandBOff);
+    }
+
+    private void whenPushFirstCommandOn() {
         remoteControl.onButtonWasPushed(0);
-
-        verify(command1On).execute();
-        verify(command1Off, times(0)).execute();
     }
 
-    @Test
-    public void testOnCommandPushedOff() {
-        Command command1On = mock(Command.class);
-        Command command1Off = mock(Command.class);
-
-        remoteControl.setCommand(0, command1On, command1Off);
+    private void whenPushFirstCommandOff() {
         remoteControl.offButtonWasPushed(0);
-
-        verify(command1On, times(0)).execute();
-        verify(command1Off).execute();
     }
 
-    @Test
-    public void testOneCommandPushedOnAndOff() {
-        Command command1On = mock(Command.class);
-        Command command1Off = mock(Command.class);
-
-        remoteControl.setCommand(0, command1On, command1Off);
-        remoteControl.onButtonWasPushed(0);
-        remoteControl.offButtonWasPushed(0);
-
-        verify(command1On).execute();
-        verify(command1Off).execute();
-    }
-
-    @Test
-    public void testTwoCommandsWithoutExecution() {
-        Command command1On = mock(Command.class);
-        Command command1Off = mock(Command.class);
-        Command command2On = mock(Command.class);
-        Command command2Off = mock(Command.class);
-
-        remoteControl.setCommand(0, command1On, command1Off);
-        remoteControl.setCommand(1, command2On, command2Off);
-
-        verify(command1On, times(0)).execute();
-        verify(command1Off, times(0)).execute();
-        verify(command2On, times(0)).execute();
-        verify(command2Off, times(0)).execute();
-    }
-
-    @Test
-    public void testPressingOnButtonWithoutCommand() {
-        remoteControl.onButtonWasPushed(0);
+    private void whenPushSecondCommandOn() {
         remoteControl.onButtonWasPushed(1);
     }
 
-    @Test
-    public void testPressingOffButtonWithoutCommand() {
-        remoteControl.onButtonWasPushed(0);
-        remoteControl.onButtonWasPushed(1);
+    private void whenPushSecondCommandOff() {
+        remoteControl.offButtonWasPushed(1);
     }
 }
