@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nicholasaird/HeadFirstDesignPatterns.png)](https://travis-ci.org/nicholasaird/HeadFirstDesignPatterns)
+[![Build Status](https://travis-ci.org/nicholasaird/HeadFirstDesignPatterns.svg?branch=master)](https://travis-ci.org/nicholasaird/HeadFirstDesignPatterns)
 [![codecov.io](https://codecov.io/github/nicholasaird/HeadFirstDesignPatterns/coverage.svg?branch=master)](https://codecov.io/github/nicholasaird/HeadFirstDesignPatterns?branch=master)
 
 # HeadFirstDesignPatterns
